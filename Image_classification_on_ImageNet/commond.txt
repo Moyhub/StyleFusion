@@ -1,0 +1,10 @@
+python imagenet_DDP.py --model resnet50 --batch-size 384 --lr 0.2 --epochs 90 --lambda_0 7.5 --workers 32 --dist-url 'tcp://127.0.0.1:12345' --dist-backend 'nccl' --multiprocessing-distributed --world-size 1 --rank 0
+
+nohup python -u imagenet_DDP.py --model resnet50 --batch-size 384 --lr 0.2 --epochs 90 --lambda_0 7.5 --workers 32 --dist-url 'tcp://127.0.0.1:12345' --dist-backend 'nccl' --multiprocessing-distributed --world-size 1 --rank 0 &
+
+
+python imagenet_DDP.py --model resnet50 --batch-size 384 --lr 0.2 --epochs 90 --lambda_0 7.5 --workers 32 --dist-url 'tcp://127.0.0.1:12345' --dist-backend 'nccl' --multiprocessing-distributed --world-size 1 --rank 0 -add_style 1 -style_position 3
+
+
+
+nohup python -u imagenet_DDP.py --model densenet169 --batch-size 256 --lr 0.2 --epochs 90 --lambda_0 1 --workers 32 --dist-url 'tcp://127.0.0.1:12345' --dist-backend 'nccl' --multiprocessing-distributed --world-size 1 --rank 0 -add_style 1 -style_position 3 &> densenet265.out& 
